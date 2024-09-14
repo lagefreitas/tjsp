@@ -15,9 +15,9 @@ tjsp_baixar_docs_cd_processo <- function(df,diretorio = "."){
   httr::set_config(httr::config(ssl_verifypeer = FALSE))
   
   
-  uri_pg <- "https://esaj.tjsp.jus.br/cpopg/search.do?gateway=true"
+  uri_pg <- "https://www2.tjal.jus.br/cpopg/search.do?gateway=true"
   
-  uri_sg <- "https://esaj.tjsp.jus.br/cposg/search.do?gateway=true"
+  uri_sg <- "https://www2.tjal.jus.br/cposg/search.do?gateway=true"
   
   
   pb <- progress::progress_bar$new(total = length(lista))
@@ -35,14 +35,14 @@ tjsp_baixar_docs_cd_processo <- function(df,diretorio = "."){
       
       sg <- unique(.x$cd_processo_sg)
       
-      r1 <- httr::GET(paste0("https://esaj.tjsp.jus.br/cposg/show.do?processo.codigo=",sg , "&gateway=true"))
+      r1 <- httr::GET(paste0("https://www2.tjal.jus.br/cposg/show.do?processo.codigo=",sg , "&gateway=true"))
       
-      url1 <- paste0("https://esaj.tjsp.jus.br/cposg/verificarAcessoPastaDigital.do?cdProcesso=", sg,"&conversationId=&_=1599440192646")
+      url1 <- paste0("https://www2.tjal.jus.br/cposg/verificarAcessoPastaDigital.do?cdProcesso=", sg,"&conversationId=&_=1599440192646")
       
       
     } else {
       
-      url1 <- paste0("https://esaj.tjsp.jus.br/cpopg/show.do?processo.codigo=",cd_processo , "&gateway=true")
+      url1 <- paste0("https://www2.tjal.jus.br/cpopg/show.do?processo.codigo=",cd_processo , "&gateway=true")
       
       if (stringr::str_detect(cd_processo, "^DW")){
         url1 <- paste0(url1,"&consultaDeRequisitorios=true")
@@ -51,7 +51,7 @@ tjsp_baixar_docs_cd_processo <- function(df,diretorio = "."){
       r1 <- httr::GET(url1)
       
       
-      url2 <- paste0("https://esaj.tjsp.jus.br/cpopg/abrirPastaDigital.do?processo.codigo=",cd_processo)
+      url2 <- paste0("https://www2.tjal.jus.br/cpopg/abrirPastaDigital.do?processo.codigo=",cd_processo)
       
     
       

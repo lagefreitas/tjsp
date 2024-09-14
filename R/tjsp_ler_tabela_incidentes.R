@@ -53,7 +53,7 @@ tjsp_ler_tabela_incidentes <- function(arquivos = NULL,diretorio = ".") {
     url <-  doc |>
       xml2::xml_find_all(xpath = "//div/h2[contains(text(),'Incidentes')]/../following-sibling::table[1]//a") |>
       xml2::xml_attr("href") |>
-      xml2::url_absolute("https://esaj.tjsp.jus.br")
+      xml2::url_absolute("https://www2.tjal.jus.br")
 
     tibble::tibble(processo, codigo_processo,data_recebimento, classe, url) |>
       dplyr::mutate(codigo_incidente = stringr::str_extract(url, "(?<=codigo=)[^&]+"), .after = codigo_processo) |>

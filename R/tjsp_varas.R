@@ -6,7 +6,7 @@
 tjsp_varas <- function(){
 
 
-  url1 <- "https://esaj.tjsp.jus.br/cjpg/varasTreeSelect.do"
+  url1 <- "https://www2.tjal.jus.br/cjpg/varasTreeSelect.do"
 
   conteudo <- xml2::read_html(url1, encoding = "UTF-8")
 

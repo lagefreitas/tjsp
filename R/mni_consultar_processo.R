@@ -43,7 +43,7 @@ mni_consultar_processo <- function(tribunal = "tjsp",
   
   processo <- stringr::str_remove_all(processo,"\\D")
   
-  url <-"http://esaj.tjsp.jus.br/mniws/servico-intercomunicacao-2.2.2/intercomunicacao?wsdl"
+  url <-"http://www2.tjal.jus.br/mniws/servico-intercomunicacao-2.2.2/intercomunicacao?wsdl"
   
 
   purrr::walk(processo, purrr::possibly(~{

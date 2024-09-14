@@ -20,9 +20,9 @@ tjsp_baixar_cpopg_par <- function(consulta = NULL,
 
   httr::set_config(httr::config(ssl_verifypeer = FALSE))
 
-  url1<-"https://esaj.tjsp.jus.br/cpopg/search.do?"
+  url1<-"https://www2.tjal.jus.br/cpopg/search.do?"
 
-  url2<- "https://esaj.tjsp.jus.br/cpopg/trocarPagina.do?"
+  url2<- "https://www2.tjal.jus.br/cpopg/trocarPagina.do?"
 
 
   if(parametro == "NUMOAB" | parametro == "DOCPARTE"){

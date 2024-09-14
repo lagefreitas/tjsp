@@ -61,7 +61,7 @@ tjsp_pet_dados <- function(processo,
 
     p <- stringr::str_remove_all(.x, "\\D")
 
-    url1 <- glue::glue("https://esaj.tjsp.jus.br/pet{instancia}/api/processos?cd_perfil={cd_perfil}&cd_usuario={cd_usuario}&cd_usuario_solicitante={usuario_solicitante}&documento_usuario={document_usuario}&numero_processo={.x}&permite_definicao_tipo_distribuicao=false&tipo_peticao=2&usar_outro_numero=false")
+    url1 <- glue::glue("https://www2.tjal.jus.br/pet{instancia}/api/processos?cd_perfil={cd_perfil}&cd_usuario={cd_usuario}&cd_usuario_solicitante={usuario_solicitante}&documento_usuario={document_usuario}&numero_processo={.x}&permite_definicao_tipo_distribuicao=false&tipo_peticao=2&usar_outro_numero=false")
 
 
     arquivo <- file.path(diretorio, paste0("tjsp_pet",instancia,"_", p, "_dados", ".json"))

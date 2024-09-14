@@ -31,7 +31,7 @@ tjsp_autenticar <- function(login = NULL, password = NULL) {
     }
 
   # Initial access
-  base <- "https://esaj.tjsp.jus.br/"
+  base <- "https://www2.tjal.jus.br/"
   httr::GET(stringr::str_c(base, "esaj/portal.do?servico=740000"), httr::config(ssl_verifypeer = FALSE))
 
   # Get login page file
@@ -93,7 +93,7 @@ tjsp_autenticar <- function(login = NULL, password = NULL) {
 }
 
 check_login <- function() {
-  "https://esaj.tjsp.jus.br/" %>%
+  "https://www2.tjal.jus.br/" %>%
     stringr::str_c("sajcas/verificarLogin.js") %>%
     httr::GET(httr::config(ssl_verifypeer = FALSE)) %>%
     httr::content("text") %>%

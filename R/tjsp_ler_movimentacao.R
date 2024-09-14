@@ -82,7 +82,7 @@ tjsp_ler_movimentacao <- function (arquivos = NULL, diretorio = ".") {
      structure(
        list(
          scheme = "https",
-         hostname = "esaj.tjsp.jus.br",
+         hostname = "www2.tjal.jus.br",
          port = NULL,
          path = "cposg/search.do",
          query = list(
@@ -108,7 +108,7 @@ tjsp_ler_movimentacao <- function (arquivos = NULL, diretorio = ".") {
    
  } else {
    
-   url <- xml2::url_absolute(.x,"https://esaj.tjsp.jus.br")
+   url <- xml2::url_absolute(.x,"https://www2.tjal.jus.br")
    
  }
     url

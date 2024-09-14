@@ -24,7 +24,7 @@ tjsp_baixar_cposg <- function(processos = NULL,
     stringr::str_pad(width = 20, "left", "0") |>
     pontuar_cnj()
 
-  uri1 <- "https://esaj.tjsp.jus.br/cposg/search.do?"
+  uri1 <- "https://www2.tjal.jus.br/cposg/search.do?"
 
   pb <- progress::progress_bar$new(total = length(processos))
 
@@ -32,7 +32,7 @@ tjsp_baixar_cposg <- function(processos = NULL,
 
     pb$tick()
 
-  r <-  httr::GET("https://esaj.tjsp.jus.br/cposg/open.do?gateway=true")
+  r <-  httr::GET("https://www2.tjal.jus.br/cposg/open.do?gateway=true")
 
      p <- .x
 
@@ -62,7 +62,7 @@ tjsp_baixar_cposg <- function(processos = NULL,
         stringr::str_extract( "(?<=processo\\.codigo=)\\w+")
 
    conteudo1 <-   codigo_processo |>
-     paste0("https://esaj.tjsp.jus.br/cposg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
+     paste0("https://www2.tjal.jus.br/cposg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
         purrr::map(~ httr::RETRY("GET", .x, httr::timeout(2)) |>
           httr::content())
 
@@ -76,7 +76,7 @@ tjsp_baixar_cposg <- function(processos = NULL,
       conteudo1 <- codigo_processo |>
             purrr::map(~{
                 .x |>
-               paste0("https://esaj.tjsp.jus.br/cposg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
+               paste0("https://www2.tjal.jus.br/cposg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
          httr::GET() |>
              httr::content()
     })

@@ -15,7 +15,7 @@ tjsp_intimacoes_varas <- function(codigo_foro){
   parseada <-   structure(
     list(
       scheme = "https",
-      hostname = "esaj.tjsp.jus.br",
+      hostname = "www2.tjal.jus.br",
       port = NULL,
       path = "intimacoesweb/AjaxServlet.ajax",
       query = list(
@@ -50,7 +50,7 @@ tjsp_intimacoes_varas <- function(codigo_foro){
 parseada <- structure(
   list(
     scheme = "https",
-    hostname = "esaj.tjsp.jus.br",
+    hostname = "www2.tjal.jus.br",
     port = NULL,
     path = "intimacoesweb/jsp/search/searchVara.jsp",
     query = list(

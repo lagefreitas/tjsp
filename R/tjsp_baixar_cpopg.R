@@ -42,7 +42,7 @@ tjsp_baixar_cpopg1 <- function (processo = NULL, diretorio)
 
   httr::set_config(httr::config(ssl_verifypeer = FALSE))
 
-  uri1 <- "https://esaj.tjsp.jus.br/cpopg/search.do?gateway=true"
+  uri1 <- "https://www2.tjal.jus.br/cpopg/search.do?gateway=true"
 
     unificado <- processo |>  stringr::str_extract(".{15}")
 
@@ -70,7 +70,7 @@ tjsp_baixar_cpopg1 <- function (processo = NULL, diretorio)
         stringr::str_extract( "(?<=processo\\.codigo=)\\w+")
 
       conteudo1 <-   codigo_processo |>
-        paste0("https://esaj.tjsp.jus.br/cpopg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
+        paste0("https://www2.tjal.jus.br/cpopg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
         purrr::map(~ httr::RETRY("GET", .x, httr::timeout(2)) |>
                      httr::content())
 
@@ -84,7 +84,7 @@ tjsp_baixar_cpopg1 <- function (processo = NULL, diretorio)
       conteudo1 <- codigo_processo |>
         purrr::map(~{
           .x |>
-            paste0("https://esaj.tjsp.jus.br/cpopg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
+            paste0("https://www2.tjal.jus.br/cpopg/show.do?processo.codigo=", ... = _, "&gateway=true") |>
             httr::GET() |>
             httr::content()
         })

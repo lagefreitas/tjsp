@@ -16,7 +16,7 @@ tjsp_baixar_tabela_cd_processo <- function (cd_processo = NULL, diretorio = ".")
     
     
     url1 <- .x |>
-      paste0("https://esaj.tjsp.jus.br/cpopg/show.do?processo.codigo=", ... = _, "&gateway=true") 
+      paste0("https://www2.tjal.jus.br/cpopg/show.do?processo.codigo=", ... = _, "&gateway=true") 
     
     if (stringr::str_detect(.x, "^DW")){
       url1 <- paste0(url1,"&consultaDeRequisitorios=true")
@@ -40,12 +40,12 @@ tjsp_baixar_tabela_cd_processo <- function (cd_processo = NULL, diretorio = ".")
         xml2::xml_attr("href") |>
         stringr::str_extract("(?<=Sg.)\\w+")
       
-      url2 <-  paste0("https://esaj.tjsp.jus.br/cposg/show.do?processo.codigo=",cdProcesso, "&gateway=true")
+      url2 <-  paste0("https://www2.tjal.jus.br/cposg/show.do?processo.codigo=",cdProcesso, "&gateway=true")
       
       
       r2 <- httr::GET(url2)
       
-      url3  <- paste0("https://esaj.tjsp.jus.br/cposg/verificarAcessoPastaDigital.do?cdProcesso=",cdProcesso,"&conversationId=&_=1599440192646")
+      url3  <- paste0("https://www2.tjal.jus.br/cposg/verificarAcessoPastaDigital.do?cdProcesso=",cdProcesso,"&conversationId=&_=1599440192646")
       
       
       
@@ -54,7 +54,7 @@ tjsp_baixar_tabela_cd_processo <- function (cd_processo = NULL, diretorio = ".")
       
     } else{
       
-      url3 <- paste0("https://esaj.tjsp.jus.br/cpopg/abrirPastaDigital.do?processo.codigo=",.x)
+      url3 <- paste0("https://www2.tjal.jus.br/cpopg/abrirPastaDigital.do?processo.codigo=",.x)
       
       arquivo <- file.path(diretorio,paste0("tabela_cd_processo_pg_",.x,".html"))
       

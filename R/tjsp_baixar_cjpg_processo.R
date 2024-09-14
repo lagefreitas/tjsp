@@ -23,7 +23,7 @@ tjsp_baixar_cjpg_processo <- function(processo = NULL, diretorio = ".") {
 
 
     url_parseada <- list(
-      scheme = "http", hostname = "esaj.tjsp.jus.br",
+      scheme = "http", hostname = "www2.tjal.jus.br",
       port = NULL, path = "cjpg/pesquisar.do", query = list(
         conversationId = "",
         dadosConsulta.pesquisaLivre = "", tipoNumero = "UNIFICADO",

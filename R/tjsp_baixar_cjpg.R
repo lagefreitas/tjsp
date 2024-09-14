@@ -64,7 +64,7 @@ tjsp_baixar_cjpg <-
     url_parseada <-
       list(
         scheme = "http",
-        hostname = "esaj.tjsp.jus.br",
+        hostname = "www2.tjal.jus.br",
         port = NULL,
         path = "cjpg/pesquisar.do",
         query = list(
@@ -151,7 +151,7 @@ tjsp_baixar_cjpg <-
                    httr::RETRY(
                     "GET",
                     url = paste0(
-                      "http://esaj.tjsp.jus.br/cjpg/trocarDePagina.do?pagina=",
+                      "http://www2.tjal.jus.br/cjpg/trocarDePagina.do?pagina=",
                       .x,
                       "&conversationId="
                     ),

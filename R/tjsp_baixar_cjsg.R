@@ -242,7 +242,7 @@ tjsp_baixar_cjsg1 <- function (livre = "", ementa = "", processo = "", classe = 
   httr::set_config(httr::config(ssl_verifypeer = FALSE, accept_encoding = "latin1"))
   if (aspas == TRUE) livre <- deparse(livre)
 
-  link_cjsg <- "https://esaj.tjsp.jus.br/cjsg/resultadoCompleta.do"
+  link_cjsg <- "https://www2.tjal.jus.br/cjsg/resultadoCompleta.do"
 
   body <- list(
     dados.buscaInteiroTeor = livre,
@@ -304,7 +304,7 @@ tjsp_baixar_cjsg1 <- function (livre = "", ementa = "", processo = "", classe = 
 
 
 
-  r1 <- httr::GET("https://esaj.tjsp.jus.br/cjsg/trocaDePagina.do?tipoDeDecisao=A&pagina=1",
+  r1 <- httr::GET("https://www2.tjal.jus.br/cjsg/trocaDePagina.do?tipoDeDecisao=A&pagina=1",
                   httr::set_cookies(unlist(response$cookies)), httr::accept("text/html; charset=latin1;")
                   )
 
@@ -330,7 +330,7 @@ tjsp_baixar_cjsg1 <- function (livre = "", ementa = "", processo = "", classe = 
         arquivo <- formatar_arquivo(inicio, fim, inicio_pb,
                                   fim_pb, pagina = .x, diretorio)
       Sys.sleep(1)
-      httr::GET(paste0("https://esaj.tjsp.jus.br/cjsg/trocaDePagina.do?tipoDeDecisao=A&pagina=", .x),
+      httr::GET(paste0("https://www2.tjal.jus.br/cjsg/trocaDePagina.do?tipoDeDecisao=A&pagina=", .x),
                 httr::set_cookies(unlist(response$cookies)), httr::accept("text/html; charset=latin1;"),
                 httr::write_disk(arquivo, overwrite = TRUE))
     }, NULL))
@@ -339,7 +339,7 @@ tjsp_baixar_cjsg1 <- function (livre = "", ementa = "", processo = "", classe = 
       arquivo <- formatar_arquivo(inicio, fim, inicio_pb,
                                   fim_pb, pagina = .x, diretorio)
       Sys.sleep(1)
-      httr::GET(paste0("https://esaj.tjsp.jus.br/cjsg/trocaDePagina.do?tipoDeDecisao=D&pagina=",
+      httr::GET(paste0("https://www2.tjal.jus.br/cjsg/trocaDePagina.do?tipoDeDecisao=D&pagina=",
                        .x), httr::set_cookies(unlist(response$cookies)), httr::write_disk(arquivo,
                                                                                    overwrite = TRUE))
     }, NULL), .progress = TRUE)

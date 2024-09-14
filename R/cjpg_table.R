@@ -14,7 +14,7 @@ cjpg_table <- function (tipo)
 
   tipo <- switch(tipo, classes = "classe", subjects = "assunto")
 
-  stringr::str_c("https://esaj.tjsp.jus.br/cjpg/",
+  stringr::str_c("https://www2.tjal.jus.br/cjpg/",
                  tipo,
                  "TreeSelect.do?campoId=",
                  tipo) %>%

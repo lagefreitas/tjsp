@@ -10,7 +10,7 @@ cnj <- cnj_quantidade(50000,0,2019,8,26,696, tjsp::baixar_cpopg)
 tjsp <- tjsp_quantidade(1,50000,2019,696,tjsp::baixar_cpopg)
 
 
-url <- "https://esaj.tjsp.jus.br/cjpg/varasTreeSelect.do?campoId=varas&mostrarBotoesSelecaoRapida=true&conversationId="
+url <- "https://www2.tjal.jus.br/cjpg/varasTreeSelect.do?campoId=varas&mostrarBotoesSelecaoRapida=true&conversationId="
 
 s <- httr::GET(url)
 writeBin(s$content,"data-raw/a.html")

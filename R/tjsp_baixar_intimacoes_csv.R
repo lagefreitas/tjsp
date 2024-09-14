@@ -46,7 +46,7 @@ tjsp_baixar_intimacoes_csv <- function(cd_foro = "",
 
   datas <- agrupar_datas(dt_inicio, dt_fim, corte = intervalo)
 
-  url1 <- "https://esaj.tjsp.jus.br/intimacoesweb/exportarAtosRecebidosParaCsv.do"
+  url1 <- "https://www2.tjal.jus.br/intimacoesweb/exportarAtosRecebidosParaCsv.do"
 
   purrr::walk2(datas$data_inicial, datas$data_final, ~{
 

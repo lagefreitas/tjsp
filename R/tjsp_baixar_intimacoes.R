@@ -57,9 +57,9 @@ tjsp_baixar_intimacoes <- function(cd_foro = "",
 
   url1 <- switch(versao,
 
-                 csv =  "https://esaj.tjsp.jus.br/intimacoesweb/exportarAtosRecebidosParaCsv.do",
+                 csv =  "https://www2.tjal.jus.br/intimacoesweb/exportarAtosRecebidosParaCsv.do",
 
-                 xml= "https://esaj.tjsp.jus.br/intimacoesweb/consultarAtosRecebidos.do"
+                 xml= "https://www2.tjal.jus.br/intimacoesweb/consultarAtosRecebidos.do"
 
   )
 
@@ -152,7 +152,7 @@ tjsp_baixar_intimacoes <- function(cd_foro = "",
       q <- structure(
         list(
           scheme = "https",
-          hostname = "esaj.tjsp.jus.br",
+          hostname = "www2.tjal.jus.br",
           port = NULL,
           path = "intimacoesweb/AjaxServlet.ajax",
           query = list(

@@ -10,9 +10,9 @@ tjsp_obter_cposg_oab <- function (oab = NULL)
 
   httr::set_config(httr::config(ssl_verifypeer = FALSE))
 
-  url1 <- "https://esaj.tjsp.jus.br/cposg/search.do?"
+  url1 <- "https://www2.tjal.jus.br/cposg/search.do?"
 
-  url2 <- "https://esaj.tjsp.jus.br/cposg/trocarPagina.do?"
+  url2 <- "https://www2.tjal.jus.br/cposg/trocarPagina.do?"
 
   query1 <- list(conversationId = "", dadosConsulta.localPesquisa.cdLocal = "-1",
                  cbPesquisa = "NUMOAB", dadosConsulta.tipoNuProcesso = "UNIFICADO",

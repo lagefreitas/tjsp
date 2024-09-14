@@ -13,7 +13,7 @@ tjsp_baixar_doc_movimentacao <- function(urls, diretorio = "."){
 
     cd_processo <- stringr::str_extract(.x, "(?<=codigo=)\\w+")
 
-    invisible(httr::GET(paste0("https://esaj.tjsp.jus.br/cpopg/show.do?processo.codigo=",cd_processo,"&gateway=true")))
+    invisible(httr::GET(paste0("https://www2.tjal.jus.br/cpopg/show.do?processo.codigo=",cd_processo,"&gateway=true")))
 
     query <-  .x |>
       httr::GET() |>
@@ -26,7 +26,7 @@ tjsp_baixar_doc_movimentacao <- function(urls, diretorio = "."){
       structure(
         list(
           scheme = "https",
-          hostname = "esaj.tjsp.jus.br",
+          hostname = "www2.tjal.jus.br",
           port = NULL,
           path = "pastadigital/getPDF.do",
           params = NULL,
